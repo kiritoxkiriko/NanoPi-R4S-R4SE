@@ -27,7 +27,7 @@ env:
 
 jobs:
   Build:
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
@@ -151,7 +151,7 @@ jobs:
           echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-Lean2"
           echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
           touch release.txt
-          echo "后台地址：192.168.11.1" >> release.txt
+          echo "forked by: kiritoxkiriko\n后台地址：192.168.2.1" >> release.txt
           echo "::set-output name=status::success"
           
     - name: Upload firmware to release
